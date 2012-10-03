@@ -51,7 +51,7 @@ Global $deleteChatFiles[1], $existingChatFiles[1]
 $deleteChatFiles[0] = 0
 $existingChatFiles[0] = 0
 #region Initializing the script
-$iniFile = StringReplace ( @ScriptFullPath, "au3", "ini" , -3, 0) ; not compiled
+$iniFile = StringLeft(@ScriptFullPath, StringLen(@ScriptFullPath) - 3) & "ini"
 If FileExists($iniFile) = 1 Then
 	GetLoadedConfig()
 Else
