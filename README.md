@@ -18,7 +18,7 @@ Rename $CLIENT_NAME if it's not RebirthRO.
 It has to match the title of the client window for it to be put to focus.  
 
 **[Settings]**  are saved as AutoSaveChat.ini in the same directory.  
-Chat Folder, Default = "C:\Program Files (x86)\RebirthRO\Chat"
+Chat Folder, Default = "C:\Program Files (x86)\RebirthRO\Chat"  
 * The folder where rRO stores /savechat output.
 * If you have Open 1:1 Chat ____ on in Friends Setup:
  * Those will save on the Whipser folder.
@@ -30,19 +30,19 @@ Chat Folder, Default = "C:\Program Files (x86)\RebirthRO\Chat"
  * It will not save if a macro (Alt+m) is used with the command /savechat
    using the macro will save Regular chats  
 
-Save Folder, Default = "C:\Program Files (x86)\RebirthRO\Chat"
+Save Folder, Default = "C:\Program Files (x86)\RebirthRO\Chat"  
 * This is where the script stores the running chat logs
 * It will name it {Year}-{Month}-{Day}-Chat_{LOG_NAME}.txt
 
-Save Frequency/Every, Default = 20
+Save Frequency/Every, Default = 20  
 * How long between /savechat's in seconds.
 * Positive integers only.
 
-Time Frequency, Default = 3 (Every 60 seconds)
+Time Frequency, Default = 3 (Every 60 seconds)  
 * What nTH save will "TIME: HH:MM:SS Adding x lines." be added.
 * Ex. If Time Frequency is 6, then it will add that line every 6th save.
 
-Use Alt Commands, Default = -1
+Use Alt Commands, Default = -1  
 * A value from -1 to 9.
 * If it's -1, then it will send /savechat{ENTER}
  * This will put you to login window if you're disconnected
@@ -59,7 +59,7 @@ input field.
 Logs will appear on the script's main window and appended to *AutoSaveChat.log*  
 file in the same directory as the script.  
 
-**[Technical stuff??]**
+**[Technical stuff??]**  
 When it starts, it learns what files are on the Chat Folder.  
 That way, the existing files are not read or deleted.  
 
