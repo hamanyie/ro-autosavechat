@@ -11,7 +11,8 @@
 #include <StaticConstants.au3>
 #include <TabConstants.au3>
 #include <WindowsConstants.au3>
-#include "GUIYashied.au3" ; From a post by Yashied at autoitscript.com, user function
+#include <ScrollBarConstants.au3>
+#include <GuiEdit.au3>
 #RequireAdmin
 Opt("GUIResizeMode", $GUI_DOCKAUTO)
 #Region ### START Koda GUI section ### Form=C:\Users\jerielmari\Documents\Ragnarok\Form1.kxf
@@ -446,12 +447,18 @@ Func SetExistingFiles()
 EndFunc
 
 Func SetLog($logMessage)
-	_GUICtrlEdit_SetPos($EditLog, -1, -1)
+	SetLogCaretToEnd()
 	Local $logMessageWithTime = _Now() & ": " & $logMessage & @CRLF
 	GUICtrlSetData($EditLog, $logMessageWithTime, "append")
 	Local $logFileHandle = FileOpen(@ScriptDir & "\" & "AutoSaveChat.log", 1) ; append mode
 	Local $success = FileWriteLine($logFileHandle, $logMessageWithTime)
 	FileClose($logFileHandle)
+EndFunc
+
+Func SetLogCaretToEnd()
+	$lastPos = _GUICtrlEdit_GetTextLen($EditLog) - 1
+	_GUICtrlEdit_SetSel($EditLog, $lastPos, $lastPos)
+	_GUICtrlEdit_Scroll($EditLog, $SB_SCROLLCARET)
 EndFunc
 
 Func SetLabelStatus($switchCase)
