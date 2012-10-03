@@ -1,5 +1,5 @@
 ro-autosavechat
-===============
+==============
 I am not responsible for you getting banned.
 To be sure, ask explicit permission from the server's GM you're in.
 This isn't a macro to help you spam skills, it's for saving chat
@@ -13,16 +13,16 @@ It has to match the title of the client window for it to be put to focus.
 
 [Settings]
 Chat Folder
- The folder where rRO stores /savechat output.
- If you have Open 1:1 Chat ____ on in Friends Setup:
-  Those will save on the Whipser folder.
- If you have a /chat room on:
-  Those will save on the same folder as Regular chat
- Both 1:1 Chat and /chat rooms:
-  It will only save if /savechat is entered on the respective window
-  Other chats will not be saved if /savechat is entered on the respective window
-  It will not save if a macro (Alt+m) is used with the command /savechat
-   using the macro will save Regular chats
+* The folder where rRO stores /savechat output.
+* If you have Open 1:1 Chat ____ on in Friends Setup:
+ * Those will save on the Whipser folder.
+* If you have a /chat room on:
+ * Those will save on the same folder as Regular chat
+* Both 1:1 Chat and /chat rooms:
+ * It will only save if /savechat is entered on the respective window
+ * Other chats will not be saved if /savechat is entered on the respective window
+ * It will not save if a macro (Alt+m) is used with the command /savechat
+  * using the macro will save Regular chats
 Save Folder
  This is where the script stores the running chat logs
  It will name it {Year}-{Month}-{Day}-Chat_{LOG_NAME}.txt
