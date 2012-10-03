@@ -380,7 +380,7 @@ Func GetSavedFiles()
 	Local $tChatFiles[1], $savedChatFiles[1], $sChatFiles, $sDelim = "|", $newFile
 	$tChatFiles = _FileListToArray($chatFolder, "*", 1)
 	If @error > 0 Then
-		ReDim $tChatFiles[1]
+		Local $tChatFiles[1]
 		$tChatFiles[0] = 0
 	EndIf
 	For $i = 1 To $tChatFiles[0]
