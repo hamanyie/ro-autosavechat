@@ -43,7 +43,7 @@ EndFunc
 #region Constants and Globals
 Const $SAVE_FREQ_DEFAULT = 20, $TIME_FREQ_DEFAULT = 3,$CHAT_FOLDER_DEFAULT = "C:\Program Files (x86)\RebirthRO\Chat"
 Const $CLIENT_NAME = "RebirthRO", $ERROR_MESSAGE = "Please email details to admin@hamanyie.com", $MSG_TIMEOUT = 90, $CHAT_MAX_COMPARE_LINES = 10
-Const $USE_ALT_DEFAULT = -1, $MAX_CHECK_SAVED_CHAT_COUNT = 10
+Const $USE_ALT_DEFAULT = -1, $MAX_CHECK_SAVED_CHAT_COUNT = 20
 Global $iniFile, $chatFolder = $CHAT_FOLDER_DEFAULT, $saveFolder = $CHAT_FOLDER_DEFAULT, $saveFreq = $SAVE_FREQ_DEFAULT, $timeFreq = $TIME_FREQ_DEFAULT, $useAlt = $USE_ALT_DEFAULT
 Global $deleteChatFiles[1], $existingChatFiles[1]
 #endregion
@@ -258,7 +258,7 @@ Func SaveChat($addTime)
 			SetLog("Sending: " & "/savechat{ENTER}")
 			Send("/savechat{ENTER}")
 		EndIf
-		Sleep(400) ; wait before checking
+		Sleep(500) ; wait before checking
 		$newChatFiles = GetSavedFiles()
 		If $newChatFiles[0] = 0 Then
 			$checkSavedChatExistsCount += 1
