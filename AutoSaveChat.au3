@@ -52,6 +52,7 @@ Global $deleteChatFiles[1], $existingChatFiles[1]
 $deleteChatFiles[0] = 0
 $existingChatFiles[0] = 0
 #region Initializing the script
+SetLog("Script started..." & @CRLF)
 $iniFile = StringLeft(@ScriptFullPath, StringLen(@ScriptFullPath) - 3) & "ini"
 If FileExists($iniFile) = 1 Then
 	GetLoadedConfig()
