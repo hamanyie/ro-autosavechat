@@ -208,7 +208,7 @@ Func StartAutoSave() ; make this the main body, since Closing event doesn't work
         Sleep(100)
     WEnd
     ToolTip("")
-	Local $startTime = NowDateDiffFormat(), $timeCounter = $timeFreq ; So it would run initially
+	Local $startTime = TimerInit(), $timeCounter = $timeFreq ; So it would run initially
 	SetLog("Autosave started.")
 	If WinExists($CLIENT_NAME) = 0 Then
 		MsgBox(48, "Error", "Please run " & $CLIENT_NAME & ". If using another client, " & $ERROR_MESSAGE, $MSG_TIMEOUT)
@@ -221,11 +221,11 @@ Func StartAutoSave() ; make this the main body, since Closing event doesn't work
 				Sleep(100)
 			WEnd
 			Sleep(100)
-			Local $timeDiff = _DateDiff("s", $startTime, NowDateDiffFormat())
-			GUICtrlSetData($ProgressSave, ($timeDiff / $saveFreq) * 100)
-			If  $timeDiff >= $saveFreq Then
+			Local $timeDiff = TimerDiff($startTime)
+			GUICtrlSetData($ProgressSave, ($timeDiff / $saveFreq) / 10)
+			If  $timeDiff >= $saveFreq * 1000 Then ; milliseconds
 				DoSaveChat($timeCounter)
-				$startTime = NowDateDiffFormat()
+				$startTime = TimerInit()
 			EndIf
 		Wend
 	EndIf
@@ -543,10 +543,6 @@ Func CheckErrorFileCopy($fileName, $returnValue)
 	EndIf
 EndFunc
 #endregion Error functions
-
-Func NowDateDiffFormat()
-	return (@YEAR & "/" & @MON & "/" & @MDAY & " " & @HOUR & ":" & @MIN & ":" & @SEC)
-EndFunc
 
 Func DeleteSetDeleteFiles()
 	For $i = 1 To $deleteChatFiles[0]
